@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import CardComponent from '../components/CardComponent.vue'
 interface Card {
   name: string
   url: string
@@ -9,13 +10,9 @@ defineProps({
 </script>
 
 <template>
-  <h2>Cards list</h2>
-  <div v-for="(card, index) in cards" :key="card.name">
-    <img
-      :src="`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${
-        index + 1
-      }.svg`"
-    />
-    <div>{{ card.name }}</div>
+  <div class="pt-10">
+    <div class="grid grid-cols-5 gap-5 px-20 h-fulls">
+      <CardComponent :cards="cards" />
+    </div>
   </div>
 </template>

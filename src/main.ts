@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+// @ts-ignore
 import VueAwesomePaginate from 'vue-awesome-paginate'
 const app = createApp(App)
 

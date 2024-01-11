@@ -17,7 +17,7 @@ interface Card {
   }>
 }
 
-export const useCounterStore = defineStore('card', () => {
+export const usePokemonStore = defineStore('card', () => {
   const info = ref<Card>({
     id: 0,
     name: '',

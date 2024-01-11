@@ -6,7 +6,7 @@ interface Cards {
   count: number
 }
 
-export const useCounterStore = defineStore('cards', () => {
+export const usePokemonStore = defineStore('cards', () => {
   const list = ref([])
   const count = ref(0)
 

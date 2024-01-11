@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const currentPage = ref(1)
 
-defineProps({
-  currentPage: Number,
-  count: Number,
-  limit: Number,
-  onClickHandler: Function
-})
+const props = defineProps(['count', 'limit', 'onClickHandler', 'currentPage'])
+const page = ref(props.currentPage)
 </script>
 
 <template>
@@ -17,7 +12,7 @@ defineProps({
       :total-items="count"
       :items-per-page="limit"
       :max-pages-shown="3"
-      v-model="currentPage"
+      v-model="page"
       :on-click="onClickHandler"
     />
   </div>

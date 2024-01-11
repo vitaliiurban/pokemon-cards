@@ -14,8 +14,10 @@ const isLoading = ref(false)
 const fetchCards = computed(() => cards.fetchCards)
 
 const onClickHandler = (page: number) => {
+  console.log(page)
   currentPage.value = page
   calculatedOffset.value = (currentPage.value - 1) * offset.value
+
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
@@ -31,10 +33,6 @@ const _fetchCards = async () => {
     isLoading.value = false
   }
 }
-
-// watchEffect(() => {
-//   fetchCards.value(limit.value, calculatedOffset.value)
-// })
 
 watchEffect(() => {
   _fetchCards()

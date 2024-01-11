@@ -40,7 +40,7 @@ watchEffect(() => {
 </script>
 
 <template>
-  <main class="bg-sky-50">
+  <main class="bg-sky-50 px-20 max-lg:px-0">
     <div
       v-if="isLoading"
       class="animate-pulse absolute inset-0 bg-sky-50 flex justify-center items-center text-2xl"

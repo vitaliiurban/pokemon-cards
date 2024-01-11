@@ -15,6 +15,7 @@ export const useCounterStore = defineStore('cards', () => {
       const url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
       const response = await fetch(url)
       const data = await response.json()
+      list.value = []
       list.value = data.results
       count.value = data.count
     } catch (error) {

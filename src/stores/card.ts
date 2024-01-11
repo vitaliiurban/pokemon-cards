@@ -30,6 +30,7 @@ export const useCounterStore = defineStore('card', () => {
 
   const fetchCard = async (id: Number) => {
     try {
+      info.value = { id: 0, name: '', height: 0, weight: 0, abilities: [], stats: [] }
       const url = `https://pokeapi.co/api/v2/pokemon/${id}`
 
       const response = await fetch(url)

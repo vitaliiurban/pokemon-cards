@@ -6,7 +6,7 @@ import PaginationComponent from '@/components/PaginationComponent.vue'
 
 const cards = useCounterStore()
 const limit = ref(30)
-const offset = ref(15)
+const offset = ref(30)
 const calculatedOffset = ref(0)
 const currentPage = ref(1)
 
@@ -15,6 +15,10 @@ const fetchCards = computed(() => cards.fetchCards)
 const onClickHandler = (page: number) => {
   currentPage.value = page
   calculatedOffset.value = (currentPage.value - 1) * offset.value
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 watchEffect(() => {

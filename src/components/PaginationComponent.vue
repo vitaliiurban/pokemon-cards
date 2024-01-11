@@ -11,7 +11,7 @@ defineProps({
 </script>
 
 <template>
-  <div class="w-full flex justify-center py-5">
+  <div class="w-full flex justify-center py-12">
     <vue-awesome-paginate
       class="flex gap-10"
       :total-items="count"

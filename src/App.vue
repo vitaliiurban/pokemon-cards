@@ -7,6 +7,5 @@ import HeaderComponent from './components/HeaderComponent.vue'
   <header>
     <HeaderComponent />
   </header>
-  <h1>test</h1>
   <RouterView />
 </template>

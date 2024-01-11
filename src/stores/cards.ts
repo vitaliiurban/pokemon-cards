@@ -1,24 +1,26 @@
-import { ref, computed } from 'vue'
+import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 interface Cards {
-  data: Array<{ name: string; url: string }>
+  cards: Array<{ name: string; url: string }>
   count: number
 }
 
-export const useCounterStore = defineStore('store', () => {
-  const cards = ref<Cards>({ data: [], count: 0 })
+export const useCounterStore = defineStore('cards', () => {
+  const list = ref([])
+  const count = ref(0)
 
-  const fetchData = async (limit: number, offset: number) => {
+  const fetchCards = async (limit: number, offset: number) => {
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`
       const response = await fetch(url)
       const data = await response.json()
-      cards.value = { data: data.results, count: data.count }
+      list.value = data.results
+      count.value = data.count
     } catch (error) {
       console.error('Error fetching data:', error)
     }
   }
 
-  return { cards, fetchData }
+  return { list, count, fetchCards }
 })
